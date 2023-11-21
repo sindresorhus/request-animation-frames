@@ -1,0 +1,54 @@
+{
+	"name": "request-animation-frames",
+	"version": "0.0.0",
+	"description": "Use requestAnimationFrame as an async iterable, in any JavaScript environment",
+	"license": "MIT",
+	"repository": "sindresorhus/request-animation-frames",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"requestAnimationFrame",
+		"animation",
+		"frame",
+		"frames",
+		"raf",
+		"asynciterable",
+		"asynciterator",
+		"iterable",
+		"iterator",
+		"generator",
+		"async",
+		"performance",
+		"events",
+		"stream",
+		"loop",
+		"tick",
+		"game",
+		"ponyfill",
+		"polyfill"
+	],
+	"devDependencies": {
+		"ava": "^5.3.1",
+		"xo": "^0.56.0"
+	}
+}
