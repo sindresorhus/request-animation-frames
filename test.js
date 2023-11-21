@@ -54,3 +54,22 @@ test('works in non-browser environment', async t => {
 	globalThis.requestAnimationFrame = originalRequestAnimationFrame;
 	globalThis.cancelAnimationFrame = originalCancelAnimationFrame;
 });
+
+test('timestamps always increasing', async t => {
+	let previousTimestamp = 0;
+	let index = 0;
+
+	for await (const currentTimestamp of requestAnimationFrames()) {
+		t.is(typeof currentTimestamp, 'number');
+
+		if (index > 0) {
+			t.true(currentTimestamp > previousTimestamp, `Timestamp ${index} (${currentTimestamp}) is not greater than Timestamp ${index - 1} (${previousTimestamp})`);
+		}
+
+		previousTimestamp = currentTimestamp;
+
+		if (++index >= 10) {
+			break;
+		}
+	}
+});

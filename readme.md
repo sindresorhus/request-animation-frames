@@ -25,7 +25,9 @@ for await (const timestamp of requestAnimationFrames()) {
 
 ### requestAnimationFrames()
 
-Returns an [`AsyncIterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols) that yields animation frame timestamps.
+Returns an [`AsyncIterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols) that yields animation frame [timestamps](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp).
+
+The first timestamp is yielded right away for easier setup.
 
 ## FAQ
 
@@ -54,3 +56,7 @@ setTimeout(() => {
 	shouldStop = true;
 }, 10000);
 ```
+
+## Related
+
+- [dom-mutations](https://github.com/sindresorhus/dom-mutations) - Observe changes to the DOM using an async iterable

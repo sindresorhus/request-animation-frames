@@ -1,5 +1,7 @@
 /**
-@returns An async iterable that yields animation frame timestamps.
+@returns An async iterable that yields animation frame [timestamps](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp).
+
+The first timestamp is yielded right away for easier setup.
 
 @example
 ```
