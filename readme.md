@@ -31,11 +31,11 @@ The first timestamp is yielded right away for easier setup.
 
 ## FAQ
 
-### How do I stop the loop?
+### How do I stop the iteration?
 
-Simply `return` or `break` in the loop.
+Simply `return` or `break` in the loop body.
 
-### How do I stop the loop from the outside?
+### How do I stop the iteration from the outside?
 
 ```js
 import requestAnimationFrames from 'request-animation-frames';
