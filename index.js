@@ -1,17 +1,13 @@
 export default function requestAnimationFrames() {
 	const hasRaf = typeof globalThis.requestAnimationFrame === 'function';
 
-	const requestFrame = callback => hasRaf
-		? globalThis.requestAnimationFrame(callback)
-		: setTimeout(() => callback(performance.now()), 16);
+	const requestFrame = hasRaf
+		? globalThis.requestAnimationFrame
+		: callback => setTimeout(() => callback(performance.now()), 16);
 
-	const cancelFrame = id => {
-		if (hasRaf) {
-			globalThis.cancelAnimationFrame(id);
-		} else {
-			clearTimeout(id);
-		}
-	};
+	const cancelFrame = hasRaf
+		? globalThis.cancelAnimationFrame
+		: id => clearTimeout(id);
 
 	return {
 		async * [Symbol.asyncIterator]() {
